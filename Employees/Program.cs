@@ -16,10 +16,15 @@ namespace Employees
             ShowEmployeesData(employees);
             Console.WriteLine();
 
+            var sortedEmployees = employees
+                .OrderByDescending(e => e.Salary.GetAverageMonthlySalary())
+                .ThenBy(e => e.Name).ToList();
             Console.WriteLine("Sorted list");
-            ShowEmployeesData(
-                employees.OrderByDescending(e => e.Salary.GetAverageMonthlySalary()).ThenBy(e => e.Name).ToList()
-            );
+            ShowEmployeesData(sortedEmployees);
+            Console.WriteLine();
+
+            Console.WriteLine("First five employees in sorted list");
+            ShowEmployeesData(sortedEmployees.Take(5).ToList());
             Console.WriteLine();
 
             Console.ReadLine();
