@@ -6,6 +6,9 @@ namespace Employees
 {
     class Program
     {
+        private const int AmountOfFirstEmployees = 5;
+        private const int AmountOfLastEmployeesIds = 3;
+
         static void Main(string[] args)
         {
             var employeesService = new EmployeesService();
@@ -23,12 +26,12 @@ namespace Employees
             ShowEmployeesData(sortedEmployees);
             Console.WriteLine();
 
-            Console.WriteLine("First employees in sorted list");
-            ShowEmployeesData(sortedEmployees.Take(5).ToList());
+            Console.WriteLine($"First {AmountOfFirstEmployees} employees in sorted list");
+            ShowEmployeesData(sortedEmployees.Take(AmountOfFirstEmployees).ToList());
             Console.WriteLine();
 
-            Console.WriteLine("Identifiers of last employees in sorted list");
-            ShowEmployeesData(sortedEmployees.Skip(sortedEmployees.Count - 3).ToList());
+            Console.WriteLine($"Identifiers of last {AmountOfLastEmployeesIds} employees in sorted list");
+            ShowEmployeesData(sortedEmployees.Skip(sortedEmployees.Count - AmountOfLastEmployeesIds).ToList());
             Console.WriteLine();
 
             Console.ReadLine();
