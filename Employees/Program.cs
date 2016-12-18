@@ -6,6 +6,8 @@ using Serializers;
 
 namespace Employees
 {
+    // Имеет смысл использовать DI для класса сервиса EmployeesService и покрыть тестами функционал в Main(),
+    // но на данном этапе тестового задания это проигнорировано
     class Program
     {
         private const string FileName = "employees.dat";
