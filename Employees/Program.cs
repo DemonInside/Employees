@@ -23,8 +23,12 @@ namespace Employees
             ShowEmployeesData(sortedEmployees);
             Console.WriteLine();
 
-            Console.WriteLine("First five employees in sorted list");
+            Console.WriteLine("First employees in sorted list");
             ShowEmployeesData(sortedEmployees.Take(5).ToList());
+            Console.WriteLine();
+
+            Console.WriteLine("Identifiers of last employees in sorted list");
+            ShowEmployeesData(sortedEmployees.Skip(sortedEmployees.Count - 3).ToList());
             Console.WriteLine();
 
             Console.ReadLine();
