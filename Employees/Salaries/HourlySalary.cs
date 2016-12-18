@@ -1,5 +1,8 @@
-﻿namespace Employees.Salaries
+﻿using System;
+
+namespace Employees.Salaries
 {
+    [Serializable]
     public class HourlySalary : ISalary
     {
         public decimal SalaryPerHour { get; set; }

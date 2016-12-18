@@ -50,6 +50,7 @@
     <Compile Include="Salaries\ISalary.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serializers\BinarySerializer.cs" />
     <Compile Include="WorkConsts.cs" />
   </ItemGroup>
   <ItemGroup>
