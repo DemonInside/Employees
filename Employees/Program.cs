@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Employees
 {
@@ -10,7 +11,16 @@ namespace Employees
             var employeesService = new EmployeesService();
 
             List<Employee> employees = employeesService.CreateDefaultEmployeesList();
+
+            Console.WriteLine("Not sorted list");
             ShowEmployeesData(employees);
+            Console.WriteLine();
+
+            Console.WriteLine("Sorted list");
+            ShowEmployeesData(
+                employees.OrderByDescending(e => e.Salary.GetAverageMonthlySalary()).ThenBy(e => e.Name).ToList()
+            );
+            Console.WriteLine();
 
             Console.ReadLine();
         }
