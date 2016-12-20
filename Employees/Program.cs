@@ -5,9 +5,7 @@ using System.Linq;
 using Serializers;
 
 namespace Employees
-{
-    // Имеет смысл использовать DI для класса сервиса EmployeesService и покрыть тестами функционал в Main(),
-    // но на данном этапе тестового задания это проигнорировано
+{    
     class Program
     {
         private const string FileName = "employees.dat";
@@ -24,7 +22,7 @@ namespace Employees
             Console.WriteLine();
 
             var sortedEmployees = employees
-                .OrderByDescending(e => e.Salary.GetAverageMonthlySalary())
+                .OrderByDescending(e => e.GetAverageMonthlySalary())
                 .ThenBy(e => e.Name).ToList();
             Console.WriteLine("Sorted list");
             ShowEmployeesData(sortedEmployees);
@@ -45,7 +43,7 @@ namespace Employees
         {
             foreach (var employee in employees)
             {
-                Console.WriteLine($"Id: {employee.Id} Name: {employee.Name} Salary: {employee.Salary.GetAverageMonthlySalary()}");
+                Console.WriteLine($"Id: {employee.Id} Name: {employee.Name} Salary: {employee.GetAverageMonthlySalary()}");
             }
         }
 

@@ -3,11 +3,11 @@
 namespace Employees.Salaries
 {
     [Serializable]
-    public class HourlySalary : ISalary
+    public class HourlySalaryEmployee : Employee
     {
         public decimal SalaryPerHour { get; set; }
 
-        public decimal GetAverageMonthlySalary()
+        public override decimal GetAverageMonthlySalary()
         {
             return SalaryPerHour * (decimal)(WorkConsts.AverageWorkingDaysInMonth * WorkConsts.WorkingHoursInDay);
         }

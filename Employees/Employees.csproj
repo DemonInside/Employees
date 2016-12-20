@@ -43,11 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Employee.cs" />
+    <Compile Include="Employees\Employee.cs" />
     <Compile Include="EmployeesService.cs" />
-    <Compile Include="Salaries\FixedMonthlySalary.cs" />
-    <Compile Include="Salaries\HourlySalary.cs" />
-    <Compile Include="Salaries\ISalary.cs" />
+    <Compile Include="Employees\FixedMonthlySalaryEmployee.cs" />
+    <Compile Include="Employees\HourlySalaryEmployee.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Serializers\BinarySerializer.cs" />
